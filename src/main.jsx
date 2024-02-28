@@ -5,6 +5,7 @@ import Searchmovies from '../src/movies/searchbar.jsx'
 import MovieOverview from '../src/movies/movie_overview.jsx'
 import Header from './movies/header.jsx'
 import Genremovies from './movies/genre.jsx'
+import ApiDocs from './movies/apidocs.jsx'
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path="/search_movies" element={<Searchmovies />} />
       <Route path="/movie_overview/:movieId" element={<MovieOverview />} />
       <Route path="/genre/:genreID" element={<Genremovies />} />
+      <Route path="/ApiDocs" element={<ApiDocs />} />
     </Routes> 
   </Router>
 </React.StrictMode>

@@ -72,7 +72,7 @@ export default function Header() {
                 <a href="#" className="text-white hover:text-gray-300">Popular Movies</a>
               </li>
               <li className="p-3 bg-gray-800">
-                <a href="#" className="text-white hover:text-gray-300">API DOCS</a>
+                <a href="/ApiDocs" className="text-white hover:text-gray-300">API DOCS</a>
               </li>
             </ul>
           </nav>
