@@ -35,14 +35,12 @@ export default function MovieOverview() {
   return (
     <>
       <div className="trailer-vid w-full">
-        <iframe
-          className="w-full h-96 md:h-[600px]"
-          src={movieDetails.fullmovieurl}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+      <iframe src={movieDetails.fullmovieurl}
+                width="800" 
+                height="450" 
+                frameborder="0" 
+                allowfullscreen>
+        </iframe>
       </div>
 
       <div className="movie-overview mt-5 mb-5 flex flex-col md:flex-row items-center md:text-start text-center justify-center md:mx-0 mx-8">
