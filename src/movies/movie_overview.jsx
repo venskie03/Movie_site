@@ -35,7 +35,7 @@ export default function MovieOverview() {
   return (
     <>
       <div className="trailer-vid w-full">
-      <iframe src={movieDetails.fullmovieurl}
+      <iframe src={movieDetails.fullmovieurl_1}
                 width="800" 
                 height="450" 
                 frameborder="0" 
