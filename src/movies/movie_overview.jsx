@@ -37,7 +37,7 @@ export default function MovieOverview() {
       <div className="trailer-vid w-full">
         <iframe
           className="w-full h-96 md:h-[600px]"
-          src={`https://www.2embed.stream/embed/movie/${movieDetails.id}`}
+          src={movieDetails.fullmovieurl}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
