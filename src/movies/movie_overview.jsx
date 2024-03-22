@@ -40,7 +40,7 @@ export default function MovieOverview() {
           src={movieDetails.fullmovieurl_1}
           title="fullmoovies video player"
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen">
           </iframe>
       </div>
 
