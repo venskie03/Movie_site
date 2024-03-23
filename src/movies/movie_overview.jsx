@@ -1,17 +1,42 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export default function MovieOverview() {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
+  const [movielink, setMovielink] = useState(``)
+
+  const handlemovielink1 = () =>{
+    if (movieDetails) {
+      const cloudurl = `https://2embed.org/embed/movie/${movieDetails.id}`;
+      setMovielink(cloudurl);
+    }
+  }
+
+  const handlemovielink2 = () =>{
+    if (movieDetails) {
+      const cloudurl = `https://vidsrc.xyz/embed/movie/${movieDetails.id}`;
+      setMovielink(cloudurl);
+    }
+  }
+
+  const handlemovielink3 = () =>{
+    if (movieDetails) {
+      const cloudurl = `https://multiembed.mov/directstream.php?video_id=${movieDetails.id}&tmdb=1`;
+      setMovielink(cloudurl);
+    }
+  }
+
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`https://movieapp-zyqr.onrender.com/api/v1/details/${movieId}`);
+        const response = await fetch(
+          `https://movieapp-zyqr.onrender.com/api/v1/details/${movieId}`
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch movie details');
+          throw new Error("Failed to fetch movie details");
         }
         const data = await response.json();
         setMovieDetails(data);
@@ -21,8 +46,11 @@ export default function MovieOverview() {
     };
 
     fetchMovieDetails();
-
   }, [movieId]);
+
+  useEffect(() => {
+    handlemovielink1();
+  }, [movieDetails]);
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -32,31 +60,56 @@ export default function MovieOverview() {
     return <div>Loading...</div>;
   }
 
+
+
   return (
     <>
-      <div className="trailer-vid w-full">
-      <iframe
+      <div className="trailer-vid grid w-full">
+        <iframe
           className="w-full h-96 md:h-[600px]"
-          src={movieDetails.fullmovieurl_1}
+          src={movielink}
           title="fullmoovies video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen">
-          </iframe>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+        ></iframe>
+        <h1 className="text-center mt-5 text-2xl">
+          If current server doesn't work please try other servers below.
+        </h1>
+        <div className="srcs flex flex-wrap justify-center mt-10 gap-5">
+          <button onClick={handlemovielink1} className="p-2 border border-black rounded-md w-28 flex justify-center">
+            <p className=" text-lg pr-2">
+              <ion-icon name="play-circle"></ion-icon>
+            </p>
+            VidCloud
+          </button>
+          <button onClick={handlemovielink2} className="p-2 border border-black rounded-md w-28 flex justify-center">
+            <p className=" text-lg pr-2">
+              <ion-icon name="play-circle"></ion-icon>
+            </p>{" "}
+            Vidsrc
+          </button>
+          <button onClick={handlemovielink3} className="p-2 border border-black rounded-md w-36 flex justify-center">
+            <p className=" text-lg pr-2">
+              <ion-icon name="play-circle"></ion-icon>
+            </p>{" "}
+            SuperEmbed
+          </button>
+        </div>
       </div>
 
       <div className="movie-overview mt-5 mb-5 flex flex-col md:flex-row items-center md:text-start text-center justify-center md:mx-0 mx-8">
-        <div className="md:w-1/3">
+        <div className=" ">
           <img
             className="w-80 h-auto rounded-md"
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
             alt={movieDetails.original_title}
           />
         </div>
-        <div>
+
+        <div className="p-4">
           <h1 className="text-3xl">{movieDetails.original_title}</h1>
           <p className="mt-3">{movieDetails.overview}</p>
           <p className="mt-2">
-            Genre: {movieDetails.genres.map((genre) => genre.name).join(', ')}
+            Genre: {movieDetails.genres.map((genre) => genre.name).join(", ")}
           </p>
           <p className="mt-1">Released Date: {movieDetails.release_date}</p>
           <p className="mt-1">Duration: {movieDetails.runtime} minutes</p>
@@ -69,10 +122,10 @@ export default function MovieOverview() {
             </div>
             <div className="w-full">
               <p className="mt-1">
-                Production:{' '}
+                Production:{" "}
                 {movieDetails.production_companies
                   .map((production) => production.name)
-                  .join(', ')}
+                  .join(", ")}
               </p>
             </div>
           </div>
