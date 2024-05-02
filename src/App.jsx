@@ -1,8 +1,8 @@
-import MovieSearch from "./movies/searchbar"
+import NowPlaying from "./movies/nowplaying"
 function App() {
   return (
     <div className="">
-   <MovieSearch/>
+      <NowPlaying/>
     </div>
   )
 }

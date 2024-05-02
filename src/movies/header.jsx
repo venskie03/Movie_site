@@ -45,38 +45,53 @@ export default function Header() {
     setcloseisiconvisible(false)
   };
 
+  const saveGenrename = (genrename) => {
+    const savedGenrename = localStorage.getItem("Genre_name")
+    if(!savedGenrename){
+      try {
+        localStorage.setItem("Genre_name", genrename);
+        console.log("Genre name saved:", genrename);
+      } catch (error) {
+        console.error("Error saving genre name:", error);
+      }
+    }else{
+      localStorage.removeItem("Genre_name", genrename);
+      localStorage.setItem("Genre_name", genrename);
+    }
+  }
   return (
     <>
-      <header className="bg-gray-800 py-4">
+      <header className="bg-gray-950 py-4">
         <div className="container mx-auto flex items-center justify-between px-4">
-          <h1 className="text-white flex text-yellow-300 font-bold">
+          <h1 className=" flex text-red-500 font-bold">
             <div className="mt-1 hidden md:flex text-4xl"><ion-icon name="videocam-outline"></ion-icon></div>
-            <a className="md:ml-2 md:mt-2" href="/">Movie App</a>
+            <a className="md:ml-2 md:mt-2.5 font-extrabold" href="/">PHFLIX</a>
           </h1>
           <nav className={`md:block ${isNavbarVisible ? "md:static absolute md:mt-0 mt-64 grid text-center bg-black w-full h-fit left-0" : "hidden"}`}>
             <ul className="md:flex">
-              <li className="p-3 bg-gray-800">
-                <a href="#" className="text-white hover:text-gray-300">Home</a>
+              <li className="p-3 ">
+              <a href="/" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">Home</a>
+
               </li>
-              <li className="p-3 bg-gray-800">
+              <li className="p-3">
                 <a
                   href="#"
-                  className="genre text-white hover:text-gray-300"
+                  className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100"
                   onMouseEnter={() => setIsGenreHovered(true)}
                   onClick={() => { setIsGenreHovered(true); setIsNavbarVisible(false); }}
                 >
                   Genre
                 </a>
               </li>
-              <li className="p-3 bg-gray-800">
-                <a href="#" className="text-white hover:text-gray-300">Popular Movies</a>
+              <li className="p-3 ">
+                <a href="/popularmovies" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">Popular Movies</a>
               </li>
-              <li className="p-3 bg-gray-800">
-                <a href="/ApiDocs" className="text-white hover:text-gray-300">API DOCS</a>
+              <li className="p-3">
+                <a href="/ApiDocs" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">API DOCS</a>
               </li>
             </ul>
           </nav>
-          <div className="text-yellow-300 hidden md:flex md:pr-10">Login</div>
+         
           <div className="md:hidden block">
             <button className={`text-white text-2xl ${isiconvisible ? "" : "hidden"}`} onClick={toggleNavbar}>
             <ion-icon name="menu-outline"></ion-icon>
@@ -89,9 +104,9 @@ export default function Header() {
       </header>
       <div className={`list ${isGenreHovered ? "" : "hidden"} w-full md:w-[90%] mx-auto mt-5`}>
         <h1 className="text-center mb-2 text-lg">Select Genre Below</h1>
-        <div className="genre-container flex flex-wrap gap-5 justify-center">
+        <div className="genre-container flex flex-wrap gap-5 justify-center ease-in-out delay-300">
           {genreResults.map(genre => (
-            <div className="genre-item cursor-pointer hover:bg-yellow-300 bg-gray-200 rounded-md p-3 text-center w-32 md:w-auto" key={genre.id}>
+            <div onClick={()=>{saveGenrename(genre.name)}} className="genre-item cursor-pointer hover:bg-red-400 bg-red-500 text-white rounded-md p-3 text-center w-32 md:w-auto" key={genre.id}>
               <a href={`/genre/${genre.id}`}>{genre.name}</a>
             </div>
           ))}

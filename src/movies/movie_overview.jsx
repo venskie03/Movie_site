@@ -66,28 +66,28 @@ export default function MovieOverview() {
     <>
       <div className="trailer-vid grid w-full">
         <iframe
-          className="w-full h-96 md:h-[600px]"
+          className="w-full h-96 md:h-[600px] border-2 border-red-500 rounded-md"
           src={movielink}
           title="fullmoovies video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         ></iframe>
-        <h1 className="text-center mt-5 text-2xl">
+        <h1 className="text-center text-white mt-5 text-2xl">
           If current server doesn't work please try other servers below.
         </h1>
-        <div className="srcs flex flex-wrap justify-center mt-10 gap-5">
-          <button onClick={handlemovielink1} className="p-2 border border-black rounded-md w-28 flex justify-center">
+        <div className="srcs flex flex-wrap justify-center mt-10 gap-5 text-white">
+          <button onClick={handlemovielink1} className="p-2 rounded-md w-28 flex justify-center border-2 border-red-500">
             <p className=" text-lg pr-2">
               <ion-icon name="play-circle"></ion-icon>
             </p>
             VidCloud
           </button>
-          <button onClick={handlemovielink2} className="p-2 border border-black rounded-md w-28 flex justify-center">
+          <button onClick={handlemovielink2} className="p-2 border-2 border-red-500 rounded-md w-28 flex justify-center">
             <p className=" text-lg pr-2">
               <ion-icon name="play-circle"></ion-icon>
             </p>{" "}
             Vidsrc
           </button>
-          <button onClick={handlemovielink3} className="p-2 border border-black rounded-md w-36 flex justify-center">
+          <button onClick={handlemovielink3} className="p-2 border-2 border-red-500 rounded-md w-36 flex justify-center">
             <p className=" text-lg pr-2">
               <ion-icon name="play-circle"></ion-icon>
             </p>{" "}
@@ -96,8 +96,8 @@ export default function MovieOverview() {
         </div>
       </div>
 
-      <div className="movie-overview mt-5 mb-5 flex flex-col md:flex-row items-center md:text-start text-center justify-center md:mx-0 mx-8">
-        <div className=" ">
+      <div className="movie-overview w-full flex flex-wrap justify-center items-center text-white py-20">
+        <div className="p-4">
           <img
             className="w-80 h-auto rounded-md"
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
@@ -105,9 +105,9 @@ export default function MovieOverview() {
           />
         </div>
 
-        <div className="p-4">
+        <div className="p-4 md:w-3/6">
           <h1 className="text-3xl">{movieDetails.original_title}</h1>
-          <p className="mt-3">{movieDetails.overview}</p>
+          <p className="mt-3 italic">{movieDetails.overview}</p>
           <p className="mt-2">
             Genre: {movieDetails.genres.map((genre) => genre.name).join(", ")}
           </p>
