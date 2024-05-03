@@ -130,15 +130,7 @@ export default function ApiDocs() {
           <p className="mb-2"><strong>EXAMPLE:</strong> https://movieapp-zyqr.onrender.com/api/v2/all_series/avatar</p>
         </div>
 
-        <div className="py-20">
-          <h1 className="text-4xl font-extrabold">If you have problem Fetching the API</h1>
-          <h2 className="mt-5 text-3xl">Contact Me below!</h2>
-          <div className="flex gap-2 mt-5 text-4xl text-red-500">
-          <a className="mt-2 text-sky-400" href=""><ion-icon name="logo-facebook"></ion-icon></a> ||
-          <a href="">kevinkyleganados03@gmail.com</a>
-          </div>
-        </div>
-
+     
 
 
       </div>
