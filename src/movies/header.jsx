@@ -90,7 +90,7 @@ export default function Header() {
                 <a href="/ApiDocs" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">API Docs</a>
               </li>
               <li className="p-3">
-                <a href="https://kevinkyleganados.netlify.app/" target="_blank" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">Contact Me!</a>
+                <a href="https://www.facebook.com/kyle.ganados.3" target="_blank" className="text-white border-b-2 border-transparent transition ease-in-out duration-300 hover:border-red-500 hover:text-red-500 hover:border-opacity-100 hover:delay-100">Contact Me!</a>
               </li>
          
             </ul>
