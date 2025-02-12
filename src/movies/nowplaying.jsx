@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import MovieSearch from './searchbar';
 
 export default function NowPlaying() {
-  const popularMovieUrl = "https://movieapp-zyqr.onrender.com/api/v1/popular";
+  const popularMovieUrl = "https://express-api-two-taupe.vercel.app/api/v1/movies/now_playing";
   const [movies, setMovies] = useState([]);
   const [showplayIcon, setshowplayIcon] = useState("hidden");
   const [movieid, setMovieid] = useState("");
@@ -33,6 +33,7 @@ export default function NowPlaying() {
       })
       .then(json => {
         setMovies(json);
+        console.log(json)
       })
       .catch(error => {
         setError(error.message);

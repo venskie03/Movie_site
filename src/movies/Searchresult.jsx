@@ -19,7 +19,7 @@ const showplayer = (indexid) =>{
   }
 
 const fetchsearchResults = async () =>{
-    await fetch(`https://movieapp-zyqr.onrender.com/api/v1/movie_name/${moviesname}`).then(response => {
+    await fetch(`https://express-api-two-taupe.vercel.app/api/v1/movies/search?query=${moviesname}`).then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }

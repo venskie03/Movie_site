@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import MovieSearch from './searchbar';
 
 export default function Popular() {
-  const popularMovieUrl = "https://movieapp-zyqr.onrender.com/api/v1/popular";
+  const popularMovieUrl = "https://express-api-two-taupe.vercel.app/api/v1/movies/popular";
   const [pmovies, setPMovies] = useState([]);
   const [error, setError] = useState(null);
   const [movieid, setMovieid] = useState("");

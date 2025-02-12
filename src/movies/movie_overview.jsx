@@ -33,7 +33,7 @@ export default function MovieOverview() {
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
-          `https://movieapp-zyqr.onrender.com/api/v1/details/${movieId}`
+          `https://express-api-two-taupe.vercel.app/api/v1/movies/${movieId}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch movie details");

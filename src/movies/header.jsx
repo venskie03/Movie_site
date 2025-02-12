@@ -5,7 +5,7 @@ export default function Header() {
   const [error, setError] = useState(null);
   const [isGenreHovered, setIsGenreHovered] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(false); // New state variable for navbar visibility
-  const genrelisturl = "https://movieapp-zyqr.onrender.com/api/v1/genre_list";
+  const genrelisturl = "https://express-api-two-taupe.vercel.app/api/v1/movies/genres";
   const [isiconvisible, setisiconvisible] = useState(true);
 
   const [iscloseiconvisible, setcloseisiconvisible] = useState(false);

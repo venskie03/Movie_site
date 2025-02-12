@@ -5,7 +5,7 @@ import MovieSearch from "./searchbar";
 export default function Genremovies() {
   const { genreID } = useParams();
   const [genreName, setGenrename] = useState("")
-  const popularMovieUrl = `https://movieapp-zyqr.onrender.com/api/v1/genre/${genreID}`;
+  const popularMovieUrl = `https://express-api-two-taupe.vercel.app/api/v1/movies/genres/${genreID}`;
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [showplayIcon, setshowplayIcon] = useState("hidden");

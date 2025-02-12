@@ -9,7 +9,7 @@ export default function ApiDocs() {
             <h3 className="text-lg mb-2 font-extrabold">Search Movies by Name</h3>
             <p className="mb-2 italic">This API endpoint allows users to search for movies by their name.</p>
             <div className="flex flex-wrap mb-2"><h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/movie_name/movie_name" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/movie_name/movie_name</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/search?query=Sonic" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/search?query=movieNameHere</a>
             </div>
             <p className="mb-2"><strong>Method:</strong> GET</p>
             <p className="mb-2"><strong>Response:</strong> JSON array of movie objects</p>
@@ -20,7 +20,7 @@ export default function ApiDocs() {
             <h3 className="text-lg font-extrabold mb-2">Fetch Now Playing Movies</h3>
             <p className="mb-2 italic">Returns a list of currently playing movies.</p>
             <div className="flex flex-wrap mb-2"><h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/now_playing" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/now_playing</a>
             </div>
             <p className="mb-2"><strong>Method:</strong> GET</p>
             <p className="mb-2"><strong>Response:</strong> JSON array of movie objects</p>
@@ -31,7 +31,7 @@ export default function ApiDocs() {
           <p className="mb-2 italic">Returns a list of movies based on a specific genre based on its ID.</p>
           <div className="flex flex-wrap mb-2">
             <h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/genre/{id}" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/genre/id</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/genres/28" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/genres/genredIDHere</a>
           </div>
           <p className="mb-2"><strong>Method:</strong> GET</p>
           <p className="mb-2"><strong>Parameters:</strong> id (required): The ID of the genre.</p>
@@ -43,7 +43,7 @@ export default function ApiDocs() {
           <p className="mb-2 italic">Returns a list of movie genres.</p>
           <div className="flex flex-wrap mb-2">
             <h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/genre_list" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/genre_list</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/genres" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/genres</a>
           </div>
           <p className="mb-2"><strong>Method:</strong> GET</p>
           <p className="mb-2"><strong>Response:</strong> JSON array of genre names</p>
@@ -54,7 +54,7 @@ export default function ApiDocs() {
           <p className="mb-2 italic">Returns a list of popular movies.</p>
           <div className="flex flex-wrap mb-2">
             <h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/popular" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/popular</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/popular" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/popular</a>
           </div>
           <p className="mb-2"><strong>Method:</strong> GET</p>
           <p className="mb-2"><strong>Response:</strong> JSON array of movie objects</p>
@@ -65,7 +65,7 @@ export default function ApiDocs() {
           <p className="mb-2 italic">Returns details of a movie based on its ID.</p>
           <div className="flex flex-wrap mb-2">
             <h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/details/{id}" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/details/id</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/1138749" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/movieIDHere</a>
           </div>
           <p className="mb-2"><strong>Method:</strong> GET</p>
           <p className="mb-2"><strong>Parameters:</strong> id (required): The ID of the movie.</p>
@@ -77,7 +77,7 @@ export default function ApiDocs() {
           <p className="mb-2 italic">Returns a list of top-rated movies.</p>
           <div className="flex flex-wrap mb-2">
             <h4 className="font-bold">URL:</h4>
-            <a href="https://movieapp-zyqr.onrender.com/api/v1/toprated_movies" target="_blank" className="sm:pl-2 text-sky-600">https://movieapp-zyqr.onrender.com/api/v1/toprated_movies</a>
+            <a href="https://express-api-two-taupe.vercel.app/api/v1/movies/top-rated" target="_blank" className="sm:pl-2 text-sky-600">https://express-api-two-taupe.vercel.app/api/v1/movies/top-rated</a>
           </div>
           <p className="mb-2"><strong>Method:</strong> GET</p>
           <p className="mb-2"><strong>Response:</strong> JSON array of movie objects</p>
